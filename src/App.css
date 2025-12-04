@@ -1,0 +1,118 @@
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #16213e;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #4facfe);
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 0;
+}
+
+.main-section {
+  padding: 50px;
+  background: linear-gradient(to bottom, #1a1a2e 0%, #0f0f23 100%);
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2em;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-section {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 10px;
+  }
+  
+  .resume-container {
+    border-radius: 15px;
+  }
+  
+  .main-section {
+    padding: 30px 20px;
+  }
+  
+  .section-title {
+    font-size: 1.6em;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}

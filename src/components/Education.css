@@ -1,0 +1,131 @@
+.education-section {
+  margin-bottom: 50px;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.education-card {
+  background: #0f1729;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+.education-icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.education-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  font-size: 2em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.education-year {
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9em;
+  border: 2px solid;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.education-content {
+  position: relative;
+  z-index: 1;
+}
+
+.education-degree {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.3;
+}
+
+.education-school {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.education-grade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background: rgba(102, 126, 234, 0.2);
+  border-radius: 10px;
+  color: #cbd5e0;
+  font-weight: 500;
+  width: fit-content;
+  margin-top: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.education-grade svg {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.education-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 0 20px 0 100%;
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover .education-decoration {
+  opacity: 0.15;
+}
+
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-card {
+    padding: 30px 25px;
+  }
+  
+  .education-degree {
+    font-size: 1.2em;
+  }
+  
+  .education-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8em;
+  }
+}

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Patel - Web Designer & Full Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .header .title {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item::before {
+            content: "●";
+            font-size: 1.5em;
+        }
+
+        /* Main Content */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            border-right: 2px solid #f0f0f0;
+            padding-right: 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        /* Personal Details */
+        .personal-details {
+            list-style: none;
+        }
+
+        .personal-details li {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .personal-details strong {
+            color: #667eea;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .personal-details span {
+            margin-top: 4px;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Main Section */
+        .main-section {
+            padding-left: 10px;
+        }
+
+        /* About */
+        .about-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .experience-period {
+            color: #888;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .experience-description {
+            color: #555;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .education-school {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Achievements */
+        .achievements-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #764ba2;
+            color: #555;
+        }
+
+        .achievements-list li::before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 2px solid #f0f0f0;
+                padding-right: 0;
+                padding-bottom: 30px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .skill-item:hover,
+            .experience-item:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>KARAN PATEL</h1>
+            <div class="title">WEB DESIGNER & FULL STACK DEVELOPER</div>
+            <div class="contact-info">
+                <div class="contact-item">6265610051</div>
+                <div class="contact-item">Karanpatel2832005@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Personal Details -->
+                <div class="section">
+                    <h2 class="section-title">Personal Details</h2>
+                    <ul class="personal-details">
+                        <li>
+                            <strong>Address</strong>
+                            <span>Vallabh Bhawan, Arera Hills, Bhopal</span>
+                        </li>
+                        <li>
+                            <strong>Languages</strong>
+                            <span>English, Hindi</span>
+                        </li>
+                        <li>
+                            <strong>Nationality</strong>
+                            <span>Indian</span>
+                        </li>
+                        <li>
+                            <strong>Gender</strong>
+                            <span>Male</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-list">
+                        <div class="skill-item">HTML</div>
+                        <div class="skill-item">CSS</div>
+                        <div class="skill-item">WordPress</div>
+                        <div class="skill-item">Django</div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="section">
+                    <h2 class="section-title">Achievements</h2>
+                    <ul class="achievements-list">
+                        <li>Best Modern Website Design</li>
+                        <li>Best Teaching Experience</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Section -->
+            <main class="main-section">
+                <!-- About -->
+                <div class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <div class="about-text">
+                        I am a Full Stack Developer with 3 years of experience in web development. 
+                        I am highly experienced in creating various websites and templates for all types 
+                        of industries. I have successfully developed and delivered projects across diverse 
+                        sectors, combining technical expertise with creative design solutions.
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Teacher</div>
+                                <div class="experience-company">CADD-Center</div>
+                            </div>
+                            <div class="experience-period">2019 - 2021</div>
+                        </div>
+                        <div class="experience-description">
+                            Developed project ideas and plans in conjunction with the web development team. 
+                            Utilized social media tools and strategies to train new students on becoming 
+                            full stack developers. Mentored and guided aspiring developers through 
+                            comprehensive training programs.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Customer Service Executive (CSE)</div>
+                                <div class="experience-company">Zepto</div>
+                            </div>
+                            <div class="experience-period">8-Month Contract</div>
+                        </div>
+                        <div class="experience-description">
+                            Worked on an 8-month contractual basis providing excellent customer service, 
+                            handling customer inquiries, and ensuring customer satisfaction through 
+                            effective communication and problem-solving.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Customer Service Executive (CSE)</div>
+                                <div class="experience-company">Amazon</div>
+                            </div>
+                            <div class="experience-period">3-Month Contract</div>
+                        </div>
+                        <div class="experience-description">
+                            Worked on a 3-month contractual basis providing customer support and 
+                            representing the company with professionalism. Developed strong communication 
+                            skills and product knowledge.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Telecaller / CSE</div>
+                                <div class="experience-company">Flipkart</div>
+                            </div>
+                            <div class="experience-period">3-Month Contract</div>
+                        </div>
+                        <div class="experience-description">
+                            Worked as a Confident Telemarketer with expert communication skills and 
+                            flexibility to handle diverse customers. Demonstrated strong product knowledge 
+                            and represented the company professionally in all customer interactions. 
+                            Achieved success through effective communication in the call center industry.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-degree">B.Tech</div>
+                        <div class="education-school">RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya)</div>
+                        <div class="education-details">
+                            <span>In Progress</span>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-degree">Higher Secondary Education</div>
+                        <div class="education-school">Model Higher Secondary School</div>
+                        <div class="education-details">
+                            <span>Grade: A+</span>
+                            <span>Year: 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-degree">High School</div>
+                        <div class="education-school">Rose Mary Higher Secondary School</div>
+                        <div class="education-details">
+                            <span>Grade: A+</span>
+                            <span>Year: 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Thank you for considering my application. The information provided above is up-to-date and correct.</p>
+        </div>
+    </div>
+</body>
+</html>
